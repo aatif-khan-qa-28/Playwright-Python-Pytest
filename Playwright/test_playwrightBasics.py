@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect, Playwright
 
 
 def test_playwrightBasics(playwright, browser):
-    playwright.chromium.launch(headless=False)
+    playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://rahulshettyacademy.com")
@@ -26,7 +26,7 @@ def test_coreLocators(page: Page):
 
 
 def test_firefoxbrowser(playwright: Playwright):
-    firefoxBrowser = playwright.firefox.launch(headless=False)
+    firefoxBrowser = playwright.firefox.launch(headless=True)
     page = firefoxBrowser.new_page()
     page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     page.get_by_label("Username:").fill("rahulshettyacademy")
